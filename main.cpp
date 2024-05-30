@@ -2,22 +2,23 @@
 #include <vector>
 #include <string>
 #include "Contact.hpp"
+using namespace std;
 
-void addContact(std::vector<Contact>& contacts) {
-  std::string name, phone;
-  std::cout << "Enter name: ";
-  std::getline(std::cin >> std::ws, name);
-  std::cout << "Enter phone: ";
-  std::getline(std::cin, phone);
+void addContact(vector<Contact>& contacts) {
+  string name, phone;
+  cout << "Enter name: ";
+  getline(cin >> ws, name);
+  cout << "Enter phone: ";
+  getline(cin, phone);
   contacts.emplace_back(name, phone);
-  std::cout << "Contact added successfully.\n";
+  cout << "Contact added successfully.\n";
 }
 
-void displayContacts(std::vector<Contact> contacts) {
-  std::cout << "\n--- Contact List ---\n";
+void displayContacts(vector<Contact> contacts) {
+  cout << "\n--- Contact List ---\n";
   if (contacts.empty()) {
-    std::cout << "\n No contacts to display. \n";
-    std::cout << "\n";
+    cout << "\n No contacts to display. \n";
+    cout << "\n";
   } else {
     for (int i = 0; i < contacts.size(); i++) {
       contacts[i].display();
@@ -26,34 +27,34 @@ void displayContacts(std::vector<Contact> contacts) {
 }
 
 
-void searchContact(std::vector<Contact> contacts) {
-  std::string name;
-  std::cout << "\n--- Search for a Contact ---\n";
-  std::cout << "Enter name to search: ";
-  std::getline(std::cin >> std::ws, name);
+void searchContact(vector<Contact> contacts) {
+  string name;
+  cout << "\n--- Search for a Contact ---\n";
+  cout << "Enter name to search: ";
+  getline(cin >> ws, name);
   for (int i = 0; i < contacts.size(); i++) {
     if (contacts[i].getName() == name) {
-      std::cout << "__________________________ \n";
+      cout << "__________________________ \n";
       contacts[i].display();
     }
-    std::cout << "\n";
+    cout << "\n";
   }
 }
 
 int main() {
-  std::vector<Contact> contacts;
+  vector<Contact> contacts;
   int choice = 0;
-    std::cout << "===========================\n";
-    std::cout << "Welcome to Contact Manager\n";
-    std::cout << "===========================\n";
+    cout << "===========================\n";
+    cout << "Welcome to Contact Manager\n";
+    cout << "===========================\n";
 
   while (choice != 4) {
-    std::cout << "\n---------------------------\n";
-    std::cout << "What is your choice? (1-4) \n";
-    std::cout << "1. Add Contact \n2. Display Contacts \n3. Search Contact \n4. Exit\n";
-    std::cout << "---------------------------\n";
-    std::cout << "Enter your choice: ";
-    std::cin >> choice;
+    cout << "\n---------------------------\n";
+    cout << "What is your choice? (1-4) \n";
+    cout << "1. Add Contact \n2. Display Contacts \n3. Search Contact \n4. Exit\n";
+    cout << "---------------------------\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
     
     switch (choice) {
       case 1:
@@ -66,10 +67,10 @@ int main() {
         searchContact(contacts);
         break;
       case 4:
-        std::cout << "Exiting...\n";
+        cout << "Exiting...\n";
         break;
       default:
-        std::cout << "Wrong Input. Try again.\n";
+        cout << "Wrong Input. Try again.\n";
     }
   }
   return 0;

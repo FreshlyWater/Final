@@ -1,16 +1,17 @@
 #include "Contact.hpp"
 #include <iostream>
+using namespace std;
 
-Contact::Contact(std::string name, std::string phone) : newName(name), newPhone(phone) {}
+Contact::Contact(string name, string phone) : newName(name), newPhone(phone) {}
 
-std::string Contact::getName() {
+string Contact::getName() {
     return newName;
 }
 
-std::string Contact::getPhone() {
+string Contact::getPhone() {
     return newPhone;
 }
 
 void Contact::display() {
-    std::cout << "Name: " << newName << ", Phone: " << newPhone << std::endl;
+    cout << "Name: " << newName << ", Phone: " << newPhone << "\n";
 }
