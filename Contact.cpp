@@ -2,7 +2,10 @@
 #include <iostream>
 using namespace std;
 
-Contact::Contact(string name, string phone) : newName(name), newPhone(phone) {}
+Contact::Contact(string name, string phone) {
+    newName = name; 
+    newPhone = phone;
+}
 
 string Contact::getName() {
     return newName;

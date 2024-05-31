@@ -1,5 +1,3 @@
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
 #include <string>
 using namespace std;
 
@@ -15,4 +13,4 @@ public:
     void display();
 };
 
-#endif
+
